@@ -1,0 +1,378 @@
+@charset "utf-8";
+
+/* Regra padrão para ajustes relacionados ao Box Model CSS
+Mais informações em: 
+http://sergiolopes.org/css-box-sizing-border-box/ */
+*, *::before, *::after {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+
+/* Regras usando o fluxo de trabalho MOBILE FIRST 
+Todas as regras que criaremos a partir deste ponto,
+serão voltadas ao site visualizado em telas pequenas/mobile.
+
+Posteriormente, criaremos novas regras usando Media Queries
+com somente os ajustes necessários para telas médias e grandes. */
+
+
+/* Regra para o seletor tag body 
+Definimos uma imagem de fundo, 
+deixando-a fixa (parada),
+e também um padrão de fonte. */
+body {
+    background-image: url(../imagens/hypnotize.png);
+    background-attachment: fixed;
+    font-family: Arial, Verdana, sans-serif;
+}
+
+/* Regra para resetar os espaços das tags h1, h2 e p */
+h1, h2, p {
+    margin: 0;
+    padding: 0;
+}
+
+/* Regra para tornar todas as imagens responsivas/flexíveis */
+img { max-width: 100%; }
+
+/* Regra para o #topo e #rodape
+Definimos uma cor de fundo para os dois elementos
+e alinhamos ao centro */
+#topo, #rodape {
+    background-color: rgba(217, 217, 217, 0.8);
+    text-align: center;
+}
+
+/* Regra para o elemento #topo 
+Definimos a borda inferior e espaçamento
+externo inferior. */
+#topo {
+    border-bottom: solid 1px;
+    margin-bottom: 15px;
+}
+
+/* Regra para o elemento #rodape
+Definimos uma borda superior e um espaçamento
+interno */
+#rodape { 
+    border-top: solid 1px; 
+    padding: 1%;
+}
+
+/* Regra a imagem (logo) contida no #topo
+Definimos um espaçamento externo superior */
+#topo img { margin-top: 5px; }
+
+
+/* Regra para os articles contidos
+em #conteudo
+Definimos: cor de fundo, sombra no box, 
+espaçamento dentro, espaçamento externo (superior
+e inferior) */
+#conteudo article {
+    background-color: white;
+    box-shadow: grey 1px 1px 5px;
+    padding: 1%;
+    margin-top: 15px;
+    margin-bottom: 15px;
+}
+
+/* Regra para os elementos h2 e p
+contidos em #conteudo
+Definimos: espaçamento interno (superior
+e inferior) */
+#conteudo h2, #conteudo p {
+    padding-top: 1%;
+    padding-bottom: 1%;
+}
+
+/* Regra para o elemento #conteudo (main)
+Definimos: largura máxima de 95%, espaçamento
+externo automático (na prática, isso centraliza
+o elemento) */
+#conteudo {
+    max-width: 95%;
+    margin: auto;
+}
+
+/* Regra para o p contido no #rodape
+Definimos tamanho da fonte */
+#rodape p { font-size: 14px; }
+
+/* Regra para o aside contido no #rodape
+Definimos espaçamento externo (superior
+e inferior)*/
+#rodape aside {
+    margin-top: 15px;
+    margin-bottom: 15px;
+}
+
+/* Regra para as imagens contidas no #rodape
+Definimos espaçamento (esquerda e direita) */
+#rodape img {
+    margin-left: 5px;
+    margin-right: 5px;
+}
+
+
+/* Exercício 01:
+Criar regra para o menu do site definindo altura mínima de 40px */
+nav { 
+    min-height: 40px; 
+    /* Transformando o nav em um Flex Container */
+    display: flex;
+    /* Alinhando ao centro */
+    justify-content: flex-end;
+    align-items: center;
+}
+
+/* Exercício 02: 
+Criar regra para os links contidos no menu do site
+definindo: sem underline e cor de texto preto. */
+nav a {
+    color: black;
+    text-decoration: none;
+    transition: background-color 2s;
+    
+    width: 23%;
+    
+    /* Ao usar inherit, o valor aplicado
+    será o mesmo usado no elemento pai (nav) */
+    min-height: inherit; 
+    
+    /* Transformando os links TAMBÉM 
+    em Flex */
+    display: flex;
+    
+    /* Como agora são FLEX, também
+    podemos alinhar */
+    align-items: center;
+    justify-content: center;
+}
+
+/* Exercício 03:
+Criar regras para os links nos estados de passar o mouse e dar foco, definindo: cor de fundo preto e cor de texto branco. */
+nav a:hover, nav a:focus {
+    background-color: black;
+    color: white;
+}
+
+
+/* Regras para os elementos da 
+página Nossa equipe */
+
+/* Regra para o elemento #galeria, definindo:
+exibição como Flex Container, alinhamento horizontal
+ao centro, alinhamento vertical ao centro e quebra
+dos itens flex. */
+#galeria {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+    /* Esta propriedade quando habilitada com o valor
+    wrap, faz com que os itens contidos no Flex Container
+    sejam "quebrados", ou seja, caso não tenha espaço
+    eles são automaticamente jogados para baixo. */
+    flex-wrap: wrap;
+}
+
+/* Regra para os links contidos no
+elemento #galeria em que definimos
+a remoção do underline */
+#galeria a { text-decoration: none; }
+
+#galeria figure {
+    margin: 1%;
+    position: relative;
+}
+
+#galeria figcaption {
+    background-color: rgba(0,0,0,0.8);
+    color: white;
+    font-weight: bold;
+    text-align: center;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    
+    /* Solução Duanny/João Pedro */
+    /*position: relative;
+    bottom: 50px;*/
+    
+    width: 100%;
+    position: absolute;
+    bottom: 10px;
+}
+
+/* Regra para as imagens dentro de links e
+contidos em #galeria definindo uma opacidade menor */
+#galeria a img {
+    opacity: 0.5;
+    transition: 1s;
+}
+
+/* Regra para ao passar o mouse ou dar foco
+nos links, definir a opacidade da imagem
+para o normal (1) */
+#galeria a:hover img, #galeria a:focus img {
+    opacity: 1;
+}
+
+
+/* Regras para o formulário 
+contido em #fale-conosco */
+
+/* Regra para os campos nome, email, telefone,
+assunto, mensagem definindo uma borda para 
+todos */
+#nome, #email, #telefone, #assunto, #mensagem {
+    border: solid 2px;
+    width: 100%;
+    padding: 2%;
+    height: 50px;
+}
+
+#mensagem { height: 150px; }
+
+#fale-conosco label {
+    font-weight: bold;
+    font-size: 14px;
+}
+
+#fale-conosco button {
+    background-color: black;
+    color: white;
+    padding: 2%;
+    border: none;
+}
+
+#fale-conosco button:hover,
+#fale-conosco button:focus {
+    background-color: darkblue;
+}
+
+/* Regra para o mapa contido 
+em #localizacao */
+#localizacao iframe { width: 100%; }
+
+#localizacao { margin-top: 50px; }
+
+.centralizar {
+    display:block;
+    margin: auto;
+}
+
+#conteudo h2 {
+    color: blue;
+    text-transform: uppercase;
+    font-size: 22px;
+}
+
+/* A partir deste ponto
+são criadas as Media Queries:
+regras que vão adaptar o site em
+telas de acordo com determinados 
+tamanhos. */
+
+/* 1a Media Query:
+Telas a partir de 700px de largura */
+@media screen and (min-width: 700px) {
+    #topo {
+        position: fixed;
+        z-index: 100;
+        width: 100%;
+        top: 0;
+        height: 60px;
+    }
+    
+    #topo div {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    
+    h1 { margin-left: 3%; }
+    
+    nav { width: 100%; }
+    
+    #conteudo { 
+        margin-top: 70px; 
+    }
+    
+    #servicos { 
+        display: flex; 
+        margin-top: 30px;
+        margin-bottom: 30px;
+        justify-content: space-between;
+    }
+    
+    #servicos section { width: 32%; }
+    
+    #fale-conosco form, 
+    #localizacao iframe {
+        width: 80%;
+        margin: auto;
+        display: block;
+    }
+    
+} /* fim media 700px */ 
+
+
+/* 2a Media Query:
+Telas a partir de 1000px de largura */
+@media screen and (min-width: 1000px) {
+    body { font-size: 20px; }  
+    
+    #topo { height: 70px; }
+    
+    #topo div {
+        /* Este será o tamanho máximo da div
+        contida no #topo. Isso permitirá
+        definir a posição do logotipo e do nav */
+        max-width: 1000px;
+        margin: auto;
+    }
+    
+    #conteudo { 
+        margin-top: 80px; 
+        
+        /* Este será o tamanho máximo do #conteudo */
+        max-width: 1000px;
+    }
+    
+    h1 {
+        margin-left: 0;
+        margin-top: 5px;
+    }
+    
+    nav { justify-content: flex-end; }
+    
+    #formulario-e-mapa {
+        display: flex;
+        justify-content: space-between;
+    }
+    
+    #fale-conosco form,
+    #localizacao iframe {
+        width: 100%;
+    }
+    
+    #fale-conosco, #localizacao {
+        width: 49%;
+    }
+    
+    #localizacao { margin-top: 0; }
+    
+} /* fim media de 1000px*/
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Contato -- Ômega - Design e Tecnologia</title>
+<link rel="stylesheet" href="css/normalize.css">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <header id="topo">
+        <div>
+            <h1>
+                <a href="index.html">
+                    <img src="imagens/logo.svg" alt="">
+                </a>
+            </h1>
+            <nav>
+                <a href="index.html">Home</a>
+                <a href="o-que-fazemos.html">O que fazemos</a>
+                <a href="nossa-equipe.html">Nossa equipe</a>
+                <a href="contato.html">Contato</a>
+            </nav>
+        </div>
+    </header>
+    <main id="conteudo">
+        <article>
+            <h2>Contato</h2>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ea, quod sapiente cumque labore libero accusantium dolor! Similique nesciunt eligendi ut.</p>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolore, nulla.</p>
+            
+            <section id="formulario-e-mapa">
+                <div id="fale-conosco">
+                    <h3>Fale Conosco</h3>
+                    <form action="enviar-email.php" method="post">
+                        <p>
+                            <label for="nome">Nome:</label> 
+                            <input type="text" id="nome" name="nome" required>   
+                        </p>
+                        <p>
+                            <label for="email">E-mail:</label> 
+                            <input type="email" id="email" name="email" required>   
+                        </p>
+                        <p>
+                            <label for="telefone">Telefone:</label> 
+                            <input type="tel" id="telefone" name="telefone">   
+                        </p>
+                        <p>
+                            <label for="assunto">Assunto:</label> 
+                            <input type="text" id="assunto" name="assunto" required>   
+                        </p>
+                        <p>
+                            <label for="mensagem">Mensagem:</label>
+                            <textarea required name="mensagem" id="mensagem" cols="50" rows="6"></textarea>
+                        </p>
+                        <button type="submit" id="enviar" name="enviar">Enviar dados</button>
+                        <button type="reset" id="limpar" name="limpar">Limpar campos</button>
+                    </form>
+                </div>
+                
+                <div id="localizacao">
+                    <h3>Nossa localização</h3>
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3658.1760433027334!2d-46.54243608664075!3d-23.526169866175092!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94ce5e45de28bb23%3A0x1d2ed3122aae28a7!2sSenac+Penha!5e0!3m2!1spt-BR!2sbr!4v1539711897074" height="450" frameborder="0" style="border:0" allowfullscreen></iframe>
+                </div>
+                
+            </section>
+            
+        </article>
+    </main>
+    <footer id="rodape">
+        <aside>
+            <!--(a>img)*5-->
+            <a href=""><img src="imagens/facebook.png" alt=""></a>
+            <a href=""><img src="imagens/instagram.png" alt=""></a>
+            <a href=""><img src="imagens/linkedin.png" alt=""></a>
+            <a href=""><img src="imagens/twitter.png" alt=""></a>
+            <a href=""><img src="imagens/youtube.png" alt=""></a>
+        </aside>
+        <p>Desenvolvido por Tiago &copy; 2018</p>
+    </footer>    
+</body>
+</html>

@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+<meta charset="UTF-8">
+<!-- meta:vp   atalho do emmet para metatag viewport -->
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Ômega - Design e Tecnologia</title>
+<link rel="stylesheet" href="css/normalize.css">
+<link rel="stylesheet" href="css/style.css">
+
+<link rel="stylesheet" type="text/css" href="slick/slick.css"/>
+<link rel="stylesheet" type="text/css" href="slick/slick-theme.css"/>
+</head>
+<body>
+    <header id="topo">
+<!-- Esta DIV será usada para auxiliar
+o CSS na limitação de ajuste/tamanho
+dos elementos h1 e nav -->       
+        <div>
+            <h1>
+                <a href="index.html">
+                    <img src="imagens/logo.svg" alt="">
+                </a>
+            </h1>
+            <nav>
+                <a href="index.html">Home</a>
+                <a href="o-que-fazemos.html">O que fazemos</a>
+                <a href="nossa-equipe.html">Nossa equipe</a>
+                <a href="contato.html">Contato</a>
+            </nav>
+        </div>
+    </header>
+    <main id="conteudo">
+        <article>
+           
+            <div class="destaques">
+                <div>
+                    <img src="imagens/destaque01.jpg" alt="">
+                    <h2>Ambiente de trabalho</h2>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Delectus repudiandae modi doloremque similique rem voluptas iusto, quae vitae recusandae molestiae.</p>
+                </div>
+                <div>
+                    <img src="imagens/destaque02.jpg" alt="">
+                    <h2>Programação Front-End</h2>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Delectus repudiandae modi doloremque similique rem voluptas iusto, quae vitae recusandae molestiae.</p>
+                </div>
+                <div>
+                    <img src="imagens/destaque03.jpg" alt="">
+                    <h2>Design Responsivo com Bootstrap</h2>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Delectus repudiandae modi doloremque similique rem voluptas iusto, quae vitae recusandae molestiae.</p>
+                </div>
+            </div>
+            
+        </article>
+        <article>
+            <h2>Nossos projetos seguem os padrões web</h2>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Molestias nobis veniam, est nostrum voluptatum quasi!</p>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cumque, et.</p>
+        </article>
+        <article>
+            <h2>Estamos alinhados às boas práticas de desenvolvimento</h2>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Adipisci, quos.</p>
+            <p>Lorem ipsum dolor sit amet.</p>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quia earum officiis rerum facilis itaque architecto.</p>
+            <img class="centralizar" src="imagens/destaque-chamada.jpg" alt="">
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cum optio eveniet doloremque tempore impedit tenetur, aliquid perspiciatis culpa tempora, nesciunt quidem vitae nemo saepe illum.</p>
+        </article>
+        
+        <!--article>h2+p*2-->
+        <article>
+            <h2>Título</h2>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Expedita, voluptates!</p>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Harum voluptas error animi alias ipsum optio debitis aperiam nostrum voluptate. Praesentium maxime quia eius voluptatem magnam alias, quidem repudiandae minus sed.</p>
+        </article>
+    </main>
+    <footer id="rodape">
+        <aside>
+            <!--(a>img)*5-->
+            <a href=""><img src="imagens/facebook.png" alt=""></a>
+            <a href=""><img src="imagens/instagram.png" alt=""></a>
+            <a href=""><img src="imagens/linkedin.png" alt=""></a>
+            <a href=""><img src="imagens/twitter.png" alt=""></a>
+            <a href=""><img src="imagens/youtube.png" alt=""></a>
+        </aside>
+        <p>Desenvolvido por Tiago &copy; 2018</p>
+    </footer> 
+      
+<script type="text/javascript" src="https://code.jquery.com/jquery-1.11.0.min.js"></script>
+<script type="text/javascript" src="https://code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
+<script type="text/javascript" src="slick/slick.min.js"></script> 
+
+<script>
+$(document).ready(function(){
+    $('.destaques').slick({
+        autoplay: true,
+        arrows: false,
+        dots: true,
+        autoplaySpeed: 5000
+    });
+});
+</script>
+</body>
+</html>
